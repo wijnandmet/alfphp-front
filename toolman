@@ -1,0 +1,14 @@
+<?php
+$arguments = $argv;
+array_shift($argv);
+
+switch($argv[0]) {
+    case 'serve':
+        shell_exec('php -S localhost:8001 public/index.php');
+        break;
+    case 'make:module':
+        break;
+    default:
+        echo 'No command has been given';
+        break;
+}
