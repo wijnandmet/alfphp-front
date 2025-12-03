@@ -1,4 +1,5 @@
 <?php
+ob_start();
 $arguments = $argv;
 array_shift($argv);
 
@@ -6,6 +7,10 @@ switch($argv[0]) {
     case 'serve':
         shell_exec('php -S localhost:8001 public/index.php');
         break;
+    case 'install':
+        shell_exec('cd public && ln -s ../storage 2>&1');
+        ob_end_clean();
+        echo 'Installation is successful';
     case 'make:module':
         break;
     default:

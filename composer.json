@@ -1,0 +1,24 @@
+{
+    "name": "wijnand/alfphp",
+    "description": "Awesomely Light Framework for PHP",
+    "autoload": {
+        "psr-4": {
+            "Wijnand\\AlfPHP\\": "package/AlfPHP/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wijnand de Ridder",
+            "email": "wijnandmet@gmail.com"
+        }
+    ],
+    "require": {
+      "wijnand/alfphp": "dev-master"
+    },
+    "repostiroies": [
+      {
+        "type": "vcs",
+        "url":  "git@github.com:wijnandmet/alfphp-framework.git"
+      }
+    ]
+}
