@@ -11,19 +11,21 @@ function shutdown()
 
 register_shutdown_function('shutdown');
 
+$env = parse_ini_file('.env');
+
+echo '<pre>';
+print_r($env);
+echo '</pre>';
 
 try {
     require_once './vendor/autoload.php';
     include_once './app/routes.php';
+
+    $response = \ALF\Route::load();
+    echo $response;
 } catch (Exception $e) {
     echo $e->getMessage();
 }
 
-$env = parse_ini_file('.env');
 
 
-echo '<pre>';
-print_r($_SERVER);
-
-print_r($env);
-echo '</pre>';

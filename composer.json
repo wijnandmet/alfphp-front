@@ -1,24 +1,25 @@
 {
-    "name": "wijnand/alfphp",
-    "description": "Awesomely Light Framework for PHP",
-    "autoload": {
-        "psr-4": {
-            "Wijnand\\AlfPHP\\": "package/AlfPHP/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Wijnand de Ridder",
-            "email": "wijnandmet@gmail.com"
-        }
-    ],
-    "require": {
-      "wijnand/alfphp": "dev-master"
-    },
-    "repostiroies": [
-      {
-        "type": "vcs",
-        "url":  "git@github.com:wijnandmet/alfphp-framework.git"
-      }
-    ]
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./packages/wijnandmet/alfphp-framework"
+    }
+  ],
+  "name": "wijnandmet/alfphp-front",
+  "description": "Awesomely Light Framework for PHP",
+  "autoload": {
+    "psr-4": {
+      "ALF\\": "packages/wijnandmet/alfphp-framework/src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Wijnand de Ridder",
+      "email": "wijnandmet@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "8.4",
+    "wijnandmet/alfphp-framework": "dev-master"
+  }
 }

@@ -1,7 +1,12 @@
 <?php
 
-use alfphp\src\Route;
+use ALF\Route;
+use ALF\Request;
 
 Route::get('/', function() {
-   echo 'route /';
+   return 'route /';
+});
+Route::get('/test', function(Request $request, $a = 1) {
+    var_export($request::get('params'));
+   return 'route /test';
 });
