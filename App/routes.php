@@ -6,7 +6,9 @@ use ALF\Request;
 Route::get('/', function() {
    return 'route /';
 });
-Route::get('/test', function(Request $request, $a = 1) {
+/*Route::get('/test', function(Request $request, $a = 1) {
     var_export($request::get('params'));
    return 'route /test';
-});
+});*/
+
+Route::get('/test', \App\Controllers\TestController::class, 'index');

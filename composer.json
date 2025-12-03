@@ -10,6 +10,7 @@
   "autoload": {
     "psr-4": {
       "ALF\\": "packages/wijnandmet/alfphp-framework/src/"
+      "App\\": "App/"
     }
   },
   "authors": [
@@ -19,7 +20,7 @@
     }
   ],
   "require": {
-    "php": "8.4",
+    "php": "^8.4",
     "wijnandmet/alfphp-framework": "dev-master"
   }
 }

@@ -19,7 +19,7 @@ echo '</pre>';
 
 try {
     require_once './vendor/autoload.php';
-    include_once './app/routes.php';
+    include_once './App/routes.php';
 
     $response = \ALF\Route::load();
     echo $response;
