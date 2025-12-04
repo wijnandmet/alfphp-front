@@ -29,31 +29,8 @@
     <h1>404 Foutmelding</h1>
 
     <?php if (env('DEBUG')) { ?>
-        <p><?php echo $error->getMessage();?></p>
-
-        <table>
-            <thead>
-            <tr>
-                <td>File</td>
-                <td>Line</td>
-                <td>Class</td>
-                <td>Method</td>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($error->getTrace() as $error) {
-                echo '<tr>';
-                echo '<td>' . $error['file'] . '</td>';
-                echo '<td>' . $error['line'] . '</td>';
-                echo '<td>' . $error['class'] . '</td>';
-                echo '<td>' . $error['function'] . '</td>';
-                echo '</tr>';
-            }
-            ?>
-            </tbody>
-        </table>
-    <?php } ?>
+        <p><?php echo $error['message'];?></p><?php
+    }?>
 </main>
 </body>
 </html>
