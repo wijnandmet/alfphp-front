@@ -9,7 +9,7 @@
   "description": "Awesomely Light Framework for PHP",
   "autoload": {
     "psr-4": {
-      "ALF\\": "packages/wijnandmet/alfphp-framework/src/"
+      "ALF\\": "packages/wijnandmet/alfphp-framework/src/",
       "App\\": "App/"
     }
   },
