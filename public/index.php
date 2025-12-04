@@ -1,31 +1,34 @@
 <?php
+use ALF\View;
+use ALF\Route;
+
 function shutdown()
 {
-    // This is our shutdown function, in
-    // here we can do any last operations
-    // before the script is complete.
-    print_r(error_get_last());
-
-    echo 'Script executed with success', PHP_EOL;
+    $error = error_get_last();
+    if ($error) {
+        http_response_code(404);
+        echo View::load('errors/404.php')->with(['error' => error_get_last()])->render();
+    }
 }
 
-register_shutdown_function('shutdown');
 
 $env = parse_ini_file('.env');
-
-echo '<pre>';
-print_r($env);
-echo '</pre>';
+env(null, $env);
 
 try {
     require_once './vendor/autoload.php';
     include_once './App/routes.php';
 
-    $response = \ALF\Route::load();
-    echo $response;
-} catch (Exception $e) {
-    echo $e->getMessage();
+    echo Route::load();
+} catch (Exception $exception) {
+    http_response_code(404);
+    $view = View::load('errors/404.php');
+    if ($view->exist('errors/404.php')) {
+        echo $view->with(['error' => $exception])->render();
+    } else {
+        echo $view->with(['error' => $exception])->renderFromPackage();
+    }
+    exit;
 }
 
-
-
+register_shutdown_function('shutdown');

@@ -1,0 +1,41 @@
+:root {
+    /* h1 font-size */
+    --min-font-size: 1.5rem;
+    --max-font-size: 4rem;
+    --min-viewport: 20rem;
+    --max-viewport: 50rem;
+    --ideal-font-size: calc(
+        (var(--max-font-size) - var(--min-font-size)) / (var(--max-viewport) - var(--min-viewport))
+    );
+    --h1-font-size: clamp(
+        var(--min-font-size),
+        var(--ideal-font-size) * 100vw,
+        var(--max-font-size)
+    );
+
+    /* default colors */
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
