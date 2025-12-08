@@ -26,7 +26,7 @@
 </head>
 <body>
 <main>
-    <h1>Foutmelding</h1>
+    <h1><?php echo lang('error.title', 'Error');?></h1>
 
     <?php if (env('DEBUG')) { ?>
         <p><?php echo $error['message'];?></p>
@@ -52,7 +52,7 @@
         </table>
     <?php } else {
         ?>
-        <p>Er is een onbekend foutmelding opgetreden.</p>
+        <p><?php echo lang('error.description', 'Er is een onbekend foutmelding opgetreden.');?></p>
         <?php
     } ?>
 </main>

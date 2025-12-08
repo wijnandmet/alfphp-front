@@ -5,6 +5,7 @@ use ALF\Route;
 try {
     require_once './vendor/autoload.php';
     env(null, parse_ini_file('.env'));
+    \ALF\Languages::load();
     echo Route::load();
 } catch (Exception $exception) {
     http_response_code(404);
