@@ -2,8 +2,7 @@
 My own PHP framework (small and simple)
 
 ### Open Tasks
-- [ ] Migrations (?)
-- [ ] Models/database-systeem
+- [ ] Models/database-systeem --> tabellen in model zetten :-)
 - [ ] JS inladen
 - [ ] Validatie
 - [ ] View-templates
